@@ -1,7 +1,7 @@
 import React from 'react';
 import { SafeAreaView, View, Text, Alert } from 'react-native';
 
-import Button from './components/Button'
+import InputPanel from './components/InputPanel'
 
 const App = () => {
 
@@ -15,22 +15,10 @@ const App = () => {
                 <Text style={{fontSize: 50}}>Hello World</Text>
             </View>
 
-            <Button
-                myOnPress={() => sayHello()}
-                //users={[1, 2, 3, 4, 5]}
-                //count={189}
-                //number = {3}
-                title='Press Me'
-                color='purple'
-            />
-
-            <Button
-                myOnPress={() => {
-                    Alert.alert('Clarusway', 'FullStack 4ever!')
+            <InputPanel 
+                sendText = {(myValue) => {
+                    console.log(myValue)
                 }}
-                //users={[1, 2, 3, 4, 5]}
-                //count={189}
-                title='Press Me and Say Hi'
             />
 
 
