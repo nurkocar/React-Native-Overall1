@@ -1,16 +1,21 @@
 import React from 'react';
-import { SafeAreaView, View, Text } from 'react-native';
+import { SafeAreaView, View, Text, TouchableOpacity,StyleSheet } from 'react-native';
 
-const limit = 100;
+import Button from './components/Button'
 
 const App = () => {
     return (
         <SafeAreaView>
             <View>
-                <Text >Hello World {limit}</Text>
+                <Text style = {{fontSize:50}}>Hello World</Text>
             </View>
+
+            <Button />
+
         </SafeAreaView>
     )
 }
 
+
 export default App;
+
