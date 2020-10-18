@@ -1,30 +1,30 @@
 import React, { useState } from 'react';
 import { TextInput, View, TouchableOpacity, Text, StyleSheet } from 'react-native';
 
-const InputPanel = (props) => {
+const MyInput = (props) => {
 
-    const [inputText, setInputText] = useState('');
+    const [name, setName] = useState('');
 
+    const sendValue = () => {
+        setName('');
+        props.getName(name)
+    }
 
     return (
         <View style={styles.container}>
             <View style={styles.inputContainer}>
                 <TextInput
-                    onChangeText={value => setInputText(value)}
-                    placeholder="Arama.."
+                    value={name}
+                    onChangeText={(value) => setName(value)}
                 />
             </View>
 
             <TouchableOpacity
                 style={styles.buttonContainer}
-                onPress={() => {
-
-                    props.sendText(inputText)
-
-                }}
+                onPress={sendValue}
             >
 
-                <Text style={{ textAlign: 'center' }}>Seç</Text>
+                <Text>{props.title}</Text>
 
             </TouchableOpacity>
 
@@ -32,11 +32,11 @@ const InputPanel = (props) => {
     )
 }
 
-export default InputPanel;
+export default MyInput;
 
 const styles = StyleSheet.create({
-    container: {
-        backgroundColor: '#cfd8dc',
+    buttonContainer: {
+        backgroundColor: '#dcedc8',
         padding: 10,
         margin: 10,
         borderRadius: 5
@@ -47,10 +47,10 @@ const styles = StyleSheet.create({
         margin: 10,
         borderRadius: 5
     },
-    buttonContainer: {
-        backgroundColor: '#b2dfdb',
+    container: {
+        backgroundColor: '#bdbdbd',
         padding: 10,
         margin: 10,
-        borderRadius: 10,
+        borderRadius: 5,
     }
 })

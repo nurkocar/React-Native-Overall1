@@ -1,25 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { SafeAreaView, View, Text, Alert } from 'react-native';
 
-import InputPanel from './components/InputPanel';
+import MyInput from './components/MyInput';
 
 const App = () => {
-
-    const [userName, setUserName] = useState('');
 
     return (
         <SafeAreaView>
             <View>
-                <Text style={{ fontSize: 50 }}>Hello {userName}</Text>
+
+                <Text style = {{fontSize:50}}>Hello there</Text>
+
+                <MyInput
+                    title = 'Set Name'
+                    getName = {(myValue) => alert('Girilen deger' + myValue)}
+                />
+
             </View>
-
-
-
-            <InputPanel
-                sendText={(myValue) => {
-                    setUserName(myValue)
-                }}
-            />
 
 
         </SafeAreaView>
