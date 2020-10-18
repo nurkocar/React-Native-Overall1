@@ -1,23 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { SafeAreaView, View, Text, Alert } from 'react-native';
 
-import InputPanel from './components/InputPanel'
+import InputPanel from './components/InputPanel';
 
 const App = () => {
 
-    function sayHello() {
-        alert("Hello there!")
-    }
+    const [userName, setUserName] = useState('');
 
     return (
-        <SafeAreaView style={{flex: 1}}>
+        <SafeAreaView>
             <View>
-                <Text style={{fontSize: 50}}>Hello World</Text>
+                <Text style={{ fontSize: 50 }}>Hello {userName}</Text>
             </View>
 
-            <InputPanel 
-                sendText = {(myValue) => {
-                    console.log(myValue)
+
+
+            <InputPanel
+                sendText={(myValue) => {
+                    setUserName(myValue)
                 }}
             />
 

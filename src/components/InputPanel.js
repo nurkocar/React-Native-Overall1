@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TextInput, View, TouchableOpacity, Text, StyleSheet} from 'react-native';
+import { TextInput, View, TouchableOpacity, Text, StyleSheet } from 'react-native';
 
 const InputPanel = (props) => {
 
@@ -10,18 +10,22 @@ const InputPanel = (props) => {
         <View style={styles.container}>
             <View style={styles.inputContainer}>
                 <TextInput
-                    onChangeText = {value => setInputText(value) }
+                    onChangeText={value => setInputText(value)}
                     placeholder="Arama.."
                 />
             </View>
 
-            <TouchableOpacity 
+            <TouchableOpacity
                 style={styles.buttonContainer}
-                onPress = {() => props.sendText(inputText)}
-                >
-                <Text style={{
-                    textAlign: 'center'
-                }}>Seç</Text>
+                onPress={() => {
+
+                    props.sendText(inputText)
+
+                }}
+            >
+
+                <Text style={{ textAlign: 'center' }}>Seç</Text>
+
             </TouchableOpacity>
 
         </View>
